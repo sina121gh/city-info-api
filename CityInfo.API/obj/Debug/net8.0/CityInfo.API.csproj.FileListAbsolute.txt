@@ -30,3 +30,4 @@ E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\obj\Debug\net8.0\refint\Cit
 E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\obj\Debug\net8.0\CityInfo.API.pdb
 E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\obj\Debug\net8.0\CityInfo.API.genruntimeconfig.cache
 E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\obj\Debug\net8.0\ref\CityInfo.API.dll
+E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\obj\Debug\net8.0\CityInfo.API.sourcelink.json
