@@ -64,3 +64,4 @@ E:\Documents\VS\Toplearn\WebApi\CityInfo\CityInfo.API\obj\Debug\net8.0\refint\Ci
 E:\Documents\VS\Toplearn\WebApi\CityInfo\CityInfo.API\obj\Debug\net8.0\CityInfo.API.pdb
 E:\Documents\VS\Toplearn\WebApi\CityInfo\CityInfo.API\obj\Debug\net8.0\CityInfo.API.genruntimeconfig.cache
 E:\Documents\VS\Toplearn\WebApi\CityInfo\CityInfo.API\obj\Debug\net8.0\ref\CityInfo.API.dll
+E:\Documents\VS\Toplearn\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\WebApiBanner.jpg
