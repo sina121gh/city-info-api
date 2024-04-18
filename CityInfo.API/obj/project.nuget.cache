@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hsFUF9AkArGews1D+s8arSbDdTqeCp4nxSuZDfmDhXpFBFuy4NrdvmNDIxgKqAq9UyTUXe2Ew7dFjZuqZpL17g==",
+  "dgSpecHash": "EYX8qwWee4DIVPmWPsARUrVJmKguyqiMJ0zscy8Dqd0Ir9FS8+FDLFRpj/2xpJms12nOchh+hlGd+Gs+Uv4vdA==",
   "success": true,
-  "projectFilePath": "E:\\Documents\\VS\\Toplearn\\WebApi\\CityInfo\\CityInfo.API\\CityInfo.API.csproj",
+  "projectFilePath": "E:\\Documents\\VS\\Toplean\\WebApi\\CityInfo\\CityInfo.API\\CityInfo.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sina1\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\8.0.4\\microsoft.aspnetcore.jsonpatch.8.0.4.nupkg.sha512",
     "C:\\Users\\sina1\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\8.0.4\\microsoft.aspnetcore.mvc.newtonsoftjson.8.0.4.nupkg.sha512",

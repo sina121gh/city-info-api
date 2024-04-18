@@ -46,7 +46,7 @@ namespace CityInfo.API
                         {
                             Id = 3,
                             Name = "Jaye Didanie 3",
-                            Description = "This is Jaye Didanie 4",
+                            Description = "This is Jaye Didanie 3",
                         },
 
                         new CitySightDto()

@@ -69,3 +69,8 @@ E:\Documents\VS\Toplearn\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Microsoft
 E:\Documents\VS\Toplearn\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Newtonsoft.Json.dll
 E:\Documents\VS\Toplearn\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
 E:\Documents\VS\Toplearn\WebApi\CityInfo\CityInfo.API\obj\Debug\net8.0\CityInfo.CBF3F5A8.Up2Date
+E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\WebApiBanner.jpg
+E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Newtonsoft.Json.dll
+E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll

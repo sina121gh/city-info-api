@@ -176,5 +176,38 @@ namespace CityInfo.API.Controllers
         }
 
         #endregion
+
+        #region DELETE
+
+        [HttpDelete("{sightId}")]
+        public ActionResult DeleteSight(int cityId, int sightId)
+        {
+            #region Find City
+
+            CityDto? city = CitiesDataStore.Current.Cities
+                .SingleOrDefault(c => c.Id == cityId);
+
+            if (city == null)
+                return NotFound();
+
+            #endregion
+
+            #region Find Sight
+
+            CitySightDto? sight = city.Sights
+                .SingleOrDefault(s => s.Id == sightId);
+
+            if (sight == null)
+                return NotFound();
+
+            #endregion
+
+            city.Sights.Remove(sight);
+
+            return NoContent();
+            
+        }
+
+        #endregion
     }
 }
