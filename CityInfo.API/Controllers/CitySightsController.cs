@@ -7,6 +7,8 @@ namespace CityInfo.API.Controllers
     [Route("api/cities/{cityId}/sights")]
     public class CitySightsController : ControllerBase
     {
+        #region GET
+
         [HttpGet]
         public ActionResult<IEnumerable<CitySightDto>> GetSights(int cityId)
         {
@@ -38,6 +40,10 @@ namespace CityInfo.API.Controllers
 
             return Ok(citySight);
         }
+
+        #endregion
+
+        #region POST
 
         [HttpPost]
         public ActionResult<CitySightDto> CreateSight(
@@ -75,5 +81,51 @@ namespace CityInfo.API.Controllers
                 newSight
                 );
         }
+
+        #endregion
+
+        #region PUT
+
+        [HttpPut("{sightId}")]
+        public ActionResult<CitySightDto> UpdateSight(int cityId, int sightId, CitySightForUpdateDto sight)
+        {
+            #region Model Validation
+
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            #endregion
+
+            #region Find City
+
+            CityDto? city = CitiesDataStore.Current.Cities
+                .SingleOrDefault(c => c.Id == cityId);
+
+            if (city == null)
+                return NotFound();
+
+            #endregion
+
+            #region Find Sight
+
+            CitySightDto? currentSight = city.Sights
+                .SingleOrDefault(s => s.Id == sightId);
+
+            if (currentSight == null)
+                return NotFound();
+
+            #endregion
+
+            #region Update Sight
+
+            currentSight.Name = sight.Name;
+            currentSight.Description = sight.Description;
+
+            #endregion
+
+            return NoContent();
+        }
+
+        #endregion
     }
 }
