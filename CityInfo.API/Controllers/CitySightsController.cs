@@ -44,6 +44,9 @@ namespace CityInfo.API.Controllers
             int cityId,
             /* [FromBody] */ CitySightForCreationDto sight)
         {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
             CityDto? city = CitiesDataStore.Current.Cities
                 .SingleOrDefault(c => c.Id == cityId);
 
