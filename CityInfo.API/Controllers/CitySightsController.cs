@@ -1,4 +1,5 @@
 ﻿using CityInfo.API.Models.DTOs;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CityInfo.API.Controllers
@@ -122,6 +123,54 @@ namespace CityInfo.API.Controllers
             currentSight.Description = sight.Description;
 
             #endregion
+
+            return NoContent();
+        }
+
+        #endregion
+
+        #region PATCH
+
+        [HttpPatch("{sightId}")]
+        public ActionResult<CitySightDto> UpdateSightPartially(int cityId, int sightId,
+            JsonPatchDocument<CitySightForUpdateDto> patchDocument)
+        {
+            #region Find City
+
+            CityDto? city = CitiesDataStore.Current.Cities
+                .SingleOrDefault(c => c.Id == cityId);
+
+            if (city == null)
+                return NotFound();
+
+            #endregion
+
+            #region Find Sight
+
+            CitySightDto? currentSight = city.Sights
+                .SingleOrDefault(s => s.Id == sightId);
+
+            if (currentSight == null)
+                return NotFound();
+
+            #endregion
+
+            CitySightForUpdateDto sightToPatch = new CitySightForUpdateDto()
+            {
+                Name = currentSight.Name,
+                Description = currentSight.Description,
+            };
+
+            patchDocument.ApplyTo(sightToPatch, ModelState);
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            if (!TryValidateModel(sightToPatch))
+                return BadRequest(ModelState);
+
+            currentSight.Name = sightToPatch.Name;
+            currentSight.Description = sightToPatch.Description;
 
             return NoContent();
         }
