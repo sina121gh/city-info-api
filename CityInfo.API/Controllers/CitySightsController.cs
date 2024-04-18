@@ -7,17 +7,10 @@ namespace CityInfo.API.Controllers
     [Route("api/cities/{cityId}/sights")]
     public class CitySightsController : ControllerBase
     {
-        //[HttpGet]
-        //public ActionResult GetSights()
-        //{
-        //    return Ok(CitiesDataStore.Current
-        //        .Cities.Select(c => c.Sights));
-        //}
-
         [HttpGet]
         public ActionResult<IEnumerable<CitySightDto>> GetSights(int cityId)
         {
-            CityDto city = CitiesDataStore.Current
+            CityDto? city = CitiesDataStore.Current
                 .Cities.SingleOrDefault
                 (c => c.Id == cityId);
 
@@ -44,6 +37,40 @@ namespace CityInfo.API.Controllers
                 return NotFound("sight not found");
 
             return Ok(citySight);
+        }
+
+        [HttpPost]
+        public ActionResult<CitySightDto> CreateSight(
+            int cityId,
+            /* [FromBody] */ CitySightForCreationDto sight)
+        {
+            CityDto? city = CitiesDataStore.Current.Cities
+                .SingleOrDefault(c => c.Id == cityId);
+
+            if (city == null)
+                return NotFound();
+
+            int lastSightId = CitiesDataStore.Current.Cities
+                .SelectMany(c => c.Sights)
+                .Max(s => s.Id);
+
+            CitySightDto newSight = new CitySightDto()
+            {
+                Id = ++lastSightId,
+                Name = sight.Name,
+                Description = sight.Description,
+            };
+
+            city.Sights.Add(newSight);
+
+            return CreatedAtAction("GetSight",
+                new
+                {
+                    cityId = cityId,
+                    sightId = newSight.Id,
+                },
+                newSight
+                );
         }
     }
 }
