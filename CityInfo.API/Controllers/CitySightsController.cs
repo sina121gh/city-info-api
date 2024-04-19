@@ -8,19 +8,39 @@ namespace CityInfo.API.Controllers
     [Route("api/cities/{cityId}/sights")]
     public class CitySightsController : ControllerBase
     {
+
+        private readonly ILogger<CitySightsController> _logger;
+
+        public CitySightsController(ILogger<CitySightsController> logger)
+        {
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        }
+
         #region GET
 
         [HttpGet]
         public ActionResult<IEnumerable<CitySightDto>> GetSights(int cityId)
         {
-            CityDto? city = CitiesDataStore.Current
+            try
+            {
+                throw new Exception("Exception Hahaha");
+                CityDto? city = CitiesDataStore.Current
                 .Cities.SingleOrDefault
                 (c => c.Id == cityId);
 
-            if (city == null)
-                return NotFound();
+                if (city == null)
+                {
+                    _logger.LogInformation($"City with id {cityId} not found");
+                    return NotFound();
+                }
 
-            return Ok(city.Sights);
+                return Ok(city.Sights);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogCritical($"an unhandled exception has occurred getting city with id {cityId}", ex);
+                return StatusCode(500, "an unhandled exception has occurred");
+            }
         }
 
         [HttpGet("{sightId}")]
@@ -205,7 +225,7 @@ namespace CityInfo.API.Controllers
             city.Sights.Remove(sight);
 
             return NoContent();
-            
+
         }
 
         #endregion

@@ -74,3 +74,13 @@ E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Microsoft.
 E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Newtonsoft.Json.dll
 E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+E:\Documents\VS\Toplearn\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+E:\Documents\VS\Toplearn\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Serilog.dll
+E:\Documents\VS\Toplearn\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Serilog.AspNetCore.dll
+E:\Documents\VS\Toplearn\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+E:\Documents\VS\Toplearn\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+E:\Documents\VS\Toplearn\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+E:\Documents\VS\Toplearn\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+E:\Documents\VS\Toplearn\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+E:\Documents\VS\Toplearn\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+E:\Documents\VS\Toplearn\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Serilog.Sinks.File.dll
