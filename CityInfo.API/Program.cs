@@ -1,3 +1,6 @@
+using CityInfo.API;
+using CityInfo.API.Services;
+using CityInfo.API.Services.Interfaces;
 using Microsoft.AspNetCore.StaticFiles;
 using Serilog;
 
@@ -27,7 +30,13 @@ builder.Services.AddControllers(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+#region IoC
+
 builder.Services.AddSingleton<FileExtensionContentTypeProvider>();
+builder.Services.AddScoped<IMailService, GmailService>();
+builder.Services.AddSingleton<CitiesDataStore>();
+
+#endregion
 
 var app = builder.Build();
 

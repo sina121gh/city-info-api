@@ -1,4 +1,5 @@
 ﻿using CityInfo.API.Models.DTOs;
+using CityInfo.API.Services.Interfaces;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,12 +10,23 @@ namespace CityInfo.API.Controllers
     public class CitySightsController : ControllerBase
     {
 
-        private readonly ILogger<CitySightsController> _logger;
+        #region DI
 
-        public CitySightsController(ILogger<CitySightsController> logger)
+        private readonly ILogger<CitySightsController> _logger;
+        private readonly IMailService _mailService;
+        private readonly CitiesDataStore _citiesDataStore;
+
+        public CitySightsController(ILogger<CitySightsController> logger,
+            IMailService mailService,
+            CitiesDataStore citiesDataStore)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _mailService = mailService ?? throw new ArgumentNullException(nameof(mailService));
+            _citiesDataStore = citiesDataStore;
+
         }
+
+        #endregion
 
         #region GET
 
@@ -23,8 +35,7 @@ namespace CityInfo.API.Controllers
         {
             try
             {
-                throw new Exception("Exception Hahaha");
-                CityDto? city = CitiesDataStore.Current
+                CityDto? city = _citiesDataStore
                 .Cities.SingleOrDefault
                 (c => c.Id == cityId);
 
@@ -46,7 +57,7 @@ namespace CityInfo.API.Controllers
         [HttpGet("{sightId}")]
         public ActionResult<CitySightDto> GetSight(int cityId, int sightId)
         {
-            CityDto? city = CitiesDataStore.Current
+            CityDto? city = _citiesDataStore
                 .Cities.SingleOrDefault
                 (c => c.Id == cityId);
 
@@ -74,13 +85,13 @@ namespace CityInfo.API.Controllers
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            CityDto? city = CitiesDataStore.Current.Cities
+            CityDto? city = _citiesDataStore.Cities
                 .SingleOrDefault(c => c.Id == cityId);
 
             if (city == null)
                 return NotFound();
 
-            int lastSightId = CitiesDataStore.Current.Cities
+            int lastSightId = _citiesDataStore.Cities
                 .SelectMany(c => c.Sights)
                 .Max(s => s.Id);
 
@@ -119,7 +130,7 @@ namespace CityInfo.API.Controllers
 
             #region Find City
 
-            CityDto? city = CitiesDataStore.Current.Cities
+            CityDto? city = _citiesDataStore.Cities
                 .SingleOrDefault(c => c.Id == cityId);
 
             if (city == null)
@@ -157,7 +168,7 @@ namespace CityInfo.API.Controllers
         {
             #region Find City
 
-            CityDto? city = CitiesDataStore.Current.Cities
+            CityDto? city = _citiesDataStore.Cities
                 .SingleOrDefault(c => c.Id == cityId);
 
             if (city == null)
@@ -204,7 +215,7 @@ namespace CityInfo.API.Controllers
         {
             #region Find City
 
-            CityDto? city = CitiesDataStore.Current.Cities
+            CityDto? city = _citiesDataStore.Cities
                 .SingleOrDefault(c => c.Id == cityId);
 
             if (city == null)
@@ -223,6 +234,7 @@ namespace CityInfo.API.Controllers
             #endregion
 
             city.Sights.Remove(sight);
+            _mailService.Send("sina121gh@gmail.com", "Delete Alert", $"<h1>Sight {sight.Name} with Id {sightId} Deleted</h1>");
 
             return NoContent();
 
