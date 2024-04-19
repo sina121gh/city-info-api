@@ -84,3 +84,4 @@ E:\Documents\VS\Toplearn\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Serilog.S
 E:\Documents\VS\Toplearn\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Serilog.Sinks.Console.dll
 E:\Documents\VS\Toplearn\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
 E:\Documents\VS\Toplearn\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\Serilog.Sinks.File.dll
+E:\Documents\VS\Toplearn\WebApi\CityInfo\CityInfo.API\bin\Debug\net8.0\appsettings.Production.json

@@ -4,7 +4,7 @@ using CityInfo.API.Services.Interfaces;
 using Microsoft.AspNetCore.StaticFiles;
 using Serilog;
 
-#region Config Serilog
+#region Serilog Config
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Debug()
