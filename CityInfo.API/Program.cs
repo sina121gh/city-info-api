@@ -1,7 +1,9 @@
 using CityInfo.API;
+using CityInfo.API.DbContexts;
 using CityInfo.API.Services;
 using CityInfo.API.Services.Interfaces;
 using Microsoft.AspNetCore.StaticFiles;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
 
 #region Serilog Config
@@ -29,6 +31,16 @@ builder.Services.AddControllers(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+#region DbContext
+
+builder.Services.AddDbContext<CityInfoDbContext>(options =>
+{
+    options.UseSqlite(builder.Configuration
+        .GetConnectionString("DefaultConnection"));
+});
+
+#endregion
 
 #region IoC
 
