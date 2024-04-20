@@ -1,5 +1,7 @@
 using CityInfo.API;
 using CityInfo.API.DbContexts;
+using CityInfo.API.Repositories;
+using CityInfo.API.Repositories.Interfaces;
 using CityInfo.API.Services;
 using CityInfo.API.Services.Interfaces;
 using Microsoft.AspNetCore.StaticFiles;
@@ -47,6 +49,7 @@ builder.Services.AddDbContext<CityInfoDbContext>(options =>
 builder.Services.AddSingleton<FileExtensionContentTypeProvider>();
 builder.Services.AddScoped<IMailService, GmailService>();
 builder.Services.AddSingleton<CitiesDataStore>();
+builder.Services.AddScoped<ICityInfoRepository, CityInfoRepository>();
 
 #endregion
 
