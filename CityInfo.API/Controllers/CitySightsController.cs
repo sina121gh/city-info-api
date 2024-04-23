@@ -1,4 +1,7 @@
-﻿using CityInfo.API.Models.DTOs;
+﻿using AutoMapper;
+using CityInfo.API.Entities;
+using CityInfo.API.Models.DTOs;
+using CityInfo.API.Repositories.Interfaces;
 using CityInfo.API.Services.Interfaces;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
@@ -14,16 +17,18 @@ namespace CityInfo.API.Controllers
 
         private readonly ILogger<CitySightsController> _logger;
         private readonly IMailService _mailService;
-        private readonly CitiesDataStore _citiesDataStore;
+        private readonly ICityInfoRepository _cityInfoRepository;
+        private readonly IMapper _mapper;
 
         public CitySightsController(ILogger<CitySightsController> logger,
             IMailService mailService,
-            CitiesDataStore citiesDataStore)
+            ICityInfoRepository cityInfoRepository,
+            IMapper mapper)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _mailService = mailService ?? throw new ArgumentNullException(nameof(mailService));
-            _citiesDataStore = citiesDataStore;
-
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+            _cityInfoRepository = cityInfoRepository ?? throw new ArgumentNullException(nameof(cityInfoRepository));
         }
 
         #endregion
@@ -31,46 +36,55 @@ namespace CityInfo.API.Controllers
         #region GET
 
         [HttpGet]
-        public ActionResult<IEnumerable<CitySightDto>> GetSights(int cityId)
+        public async Task<ActionResult<IEnumerable<CitySightDto>>> GetSights(int cityId)
         {
             try
             {
-                CityDto? city = _citiesDataStore
-                .Cities.SingleOrDefault
-                (c => c.Id == cityId);
-
-                if (city == null)
+                if (!await _cityInfoRepository.DoesCityExistAsync(cityId))
                 {
                     _logger.LogInformation($"City with id {cityId} not found");
                     return NotFound();
                 }
 
-                return Ok(city.Sights);
+                var citySights = await _cityInfoRepository.GetCitySightsAsync(cityId);
+
+                return Ok(_mapper.Map<IEnumerable<CitySightDto>>(citySights));
+
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                _logger.LogCritical($"an unhandled exception has occurred getting city with id {cityId}", ex);
+                _logger.LogCritical($"an unhandled exception has occurred");
                 return StatusCode(500, "an unhandled exception has occurred");
             }
         }
 
         [HttpGet("{sightId}")]
-        public ActionResult<CitySightDto> GetSight(int cityId, int sightId)
+        public async Task<ActionResult<CitySightDto>> GetSight(int cityId, int sightId)
         {
-            CityDto? city = _citiesDataStore
-                .Cities.SingleOrDefault
-                (c => c.Id == cityId);
+            try
+            {
+                if (!await _cityInfoRepository.DoesCityExistAsync(cityId))
+                {
+                    _logger.LogInformation($"City with id {cityId} not found");
+                    return NotFound();
+                }
 
-            if (city == null)
-                return NotFound("city not found");
+                var citySight = await _cityInfoRepository.GetCitySightByIdAsync(cityId, sightId);
 
-            CitySightDto? citySight = city.Sights
-                .SingleOrDefault(s => s.Id == sightId);
+                if (citySight == null)
+                {
+                    _logger.LogInformation($"Sight with city Id {cityId} & id {sightId} not found");
+                    return NotFound();
+                }
 
-            if (citySight == null)
-                return NotFound("sight not found");
+                return Ok(_mapper.Map<CitySightDto>(citySight));
 
-            return Ok(citySight);
+            }
+            catch (Exception)
+            {
+                _logger.LogCritical($"an unhandled exception has occurred");
+                return StatusCode(500, "an unhandled exception has occurred");
+            }
         }
 
         #endregion
@@ -78,40 +92,31 @@ namespace CityInfo.API.Controllers
         #region POST
 
         [HttpPost]
-        public ActionResult<CitySightDto> CreateSight(
+        public async Task<ActionResult<CitySightDto>> CreateSight(
             int cityId,
             /* [FromBody] */ CitySightForCreationDto sight)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            CityDto? city = _citiesDataStore.Cities
-                .SingleOrDefault(c => c.Id == cityId);
-
-            if (city == null)
-                return NotFound();
-
-            int lastSightId = _citiesDataStore.Cities
-                .SelectMany(c => c.Sights)
-                .Max(s => s.Id);
-
-            CitySightDto newSight = new CitySightDto()
+            if (!await _cityInfoRepository.DoesCityExistAsync(cityId))
             {
-                Id = ++lastSightId,
-                Name = sight.Name,
-                Description = sight.Description,
-            };
+                _logger.LogInformation($"City with id {cityId} not found");
+                return NotFound();
+            }
 
-            city.Sights.Add(newSight);
+            CitySight sightToAdd = _mapper.Map<CitySight>(sight);
 
-            return CreatedAtAction("GetSight",
-                new
-                {
-                    cityId = cityId,
-                    sightId = newSight.Id,
-                },
-                newSight
-                );
+            _cityInfoRepository.AddCitySight(cityId, sightToAdd);
+            await _cityInfoRepository.SaveChangesAsync();
+
+            CitySightDto createdSight = _mapper.Map<CitySightDto>(sightToAdd);
+
+            return CreatedAtAction("GetSight", new
+            {
+                cityId = cityId,
+                sightId = sightToAdd.Id
+            }, createdSight);
         }
 
         #endregion
@@ -119,41 +124,29 @@ namespace CityInfo.API.Controllers
         #region PUT
 
         [HttpPut("{sightId}")]
-        public ActionResult<CitySightDto> UpdateSight(int cityId, int sightId, CitySightForUpdateDto sight)
+        public async Task<ActionResult> UpdateSight(int cityId, int sightId,
+            CitySightForUpdateDto sight)
         {
-            #region Model Validation
-
+            // Model Validation
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            #endregion
 
-            #region Find City
-
-            CityDto? city = _citiesDataStore.Cities
-                .SingleOrDefault(c => c.Id == cityId);
-
-            if (city == null)
+            // Find City
+            if (!await _cityInfoRepository.DoesCityExistAsync(cityId))
                 return NotFound();
 
-            #endregion
+            // Find Sight
+            CitySight? sightToUpdate = await _cityInfoRepository
+                .GetCitySightByIdAsync(cityId, sightId);
 
-            #region Find Sight
-
-            CitySightDto? currentSight = city.Sights
-                .SingleOrDefault(s => s.Id == sightId);
-
-            if (currentSight == null)
+            if (sightToUpdate == null)
                 return NotFound();
 
-            #endregion
 
-            #region Update Sight
-
-            currentSight.Name = sight.Name;
-            currentSight.Description = sight.Description;
-
-            #endregion
+            // Update Sight
+            _mapper.Map(sight, sightToUpdate);
+            await _cityInfoRepository.SaveChangesAsync();
 
             return NoContent();
         }
@@ -163,34 +156,24 @@ namespace CityInfo.API.Controllers
         #region PATCH
 
         [HttpPatch("{sightId}")]
-        public ActionResult<CitySightDto> UpdateSightPartially(int cityId, int sightId,
+        public async Task<ActionResult<CitySightDto>> UpdateSightPartially(int cityId, int sightId,
             JsonPatchDocument<CitySightForUpdateDto> patchDocument)
         {
-            #region Find City
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
-            CityDto? city = _citiesDataStore.Cities
-                .SingleOrDefault(c => c.Id == cityId);
-
-            if (city == null)
+            // Check City
+            if (!await _cityInfoRepository.DoesCityExistAsync(cityId))
                 return NotFound();
 
-            #endregion
+            // Find Sight
+            CitySight? sightEntity = await _cityInfoRepository
+                .GetCitySightByIdAsync(cityId, sightId);
 
-            #region Find Sight
-
-            CitySightDto? currentSight = city.Sights
-                .SingleOrDefault(s => s.Id == sightId);
-
-            if (currentSight == null)
+            if (sightEntity == null)
                 return NotFound();
 
-            #endregion
-
-            CitySightForUpdateDto sightToPatch = new CitySightForUpdateDto()
-            {
-                Name = currentSight.Name,
-                Description = currentSight.Description,
-            };
+            CitySightForUpdateDto sightToPatch = _mapper.Map<CitySightForUpdateDto>(sightEntity);
 
             patchDocument.ApplyTo(sightToPatch, ModelState);
 
@@ -200,10 +183,11 @@ namespace CityInfo.API.Controllers
             if (!TryValidateModel(sightToPatch))
                 return BadRequest(ModelState);
 
-            currentSight.Name = sightToPatch.Name;
-            currentSight.Description = sightToPatch.Description;
+            _mapper.Map(sightToPatch, sightEntity);
+            await _cityInfoRepository.SaveChangesAsync();
 
             return NoContent();
+
         }
 
         #endregion
@@ -211,30 +195,27 @@ namespace CityInfo.API.Controllers
         #region DELETE
 
         [HttpDelete("{sightId}")]
-        public ActionResult DeleteSight(int cityId, int sightId)
+        public async Task<ActionResult> DeleteSight(int cityId, int sightId)
         {
-            #region Find City
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
-            CityDto? city = _citiesDataStore.Cities
-                .SingleOrDefault(c => c.Id == cityId);
-
-            if (city == null)
+            // Check City
+            if (!await _cityInfoRepository.DoesCityExistAsync(cityId))
                 return NotFound();
 
-            #endregion
-
-            #region Find Sight
-
-            CitySightDto? sight = city.Sights
-                .SingleOrDefault(s => s.Id == sightId);
+            // Find Sight
+            CitySight? sight = await _cityInfoRepository
+                .GetCitySightByIdAsync(cityId, sightId);
 
             if (sight == null)
                 return NotFound();
 
-            #endregion
+            _cityInfoRepository.DeleteSight(sight);
+            await _cityInfoRepository.SaveChangesAsync();
 
-            city.Sights.Remove(sight);
-            _mailService.Send("sina121gh@gmail.com", "Delete Alert", $"<h1>Sight {sight.Name} with Id {sightId} Deleted</h1>");
+            // Send Email
+            await _mailService.Send("sina121gh@gmail.com", "Delete Alert", $"<h1>Sight {sight.Name} with Id {sightId} Deleted</h1>");
 
             return NoContent();
 

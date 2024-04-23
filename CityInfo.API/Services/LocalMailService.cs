@@ -11,7 +11,7 @@ namespace CityInfo.API.Services
             _mailFrom = configuration["MailSettings:MailFromAddress"];
         }
 
-        public void Send(string to, string subject, string message)
+        public async Task Send(string to, string subject, string message)
         {
             Console.WriteLine($"Mail From {_mailFrom} To {to}, "
                 + $"with {nameof(LocalMailService)}");

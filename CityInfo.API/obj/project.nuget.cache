@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "4HzIInhZp0rUmOAq9fLQhpWowH/gL+Ccjy3astNr9yMd82hbyfuvpa3PG72pMz1P8T0RZpnXGa/haCuEcxB+Ww==",
+  "dgSpecHash": "RghR9At96t9Hie5JLQECumEIZMsWKjS8WCOOMRPxpMoHid+ofaQK1Df7BKtfSOgESuvaTWf/E18jJObHpSzG1Q==",
   "success": true,
   "projectFilePath": "E:\\Documents\\VS\\Toplean\\WebApi\\CityInfo\\CityInfo.API\\CityInfo.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\sina1\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\sina1\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\sina1\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\8.0.4\\microsoft.aspnetcore.jsonpatch.8.0.4.nupkg.sha512",
     "C:\\Users\\sina1\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\8.0.4\\microsoft.aspnetcore.mvc.newtonsoftjson.8.0.4.nupkg.sha512",

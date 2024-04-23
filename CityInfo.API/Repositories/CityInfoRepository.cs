@@ -8,8 +8,6 @@ namespace CityInfo.API.Repositories
     public class CityInfoRepository : ICityInfoRepository
     {
 
-        #region DI
-
         private readonly CityInfoDbContext _context;
 
         public CityInfoRepository(CityInfoDbContext context)
@@ -17,12 +15,9 @@ namespace CityInfo.API.Repositories
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        #endregion
-
         public async Task<IEnumerable<City>> GetCitiesAsync()
         {
             return await _context.Cities
-                .OrderBy(c => c.Name)
                 .ToListAsync();
         }
 
@@ -49,6 +44,29 @@ namespace CityInfo.API.Repositories
             return await _context.CitySights
                 .Where(s => s.CityId == cityId)
                 .ToListAsync();
+        }
+
+        public async Task<bool> DoesCityExistAsync(int cityId)
+        {
+            return await _context
+                .Cities
+                .AnyAsync(c => c.Id == cityId);
+        }
+
+        public async Task AddCitySight(int cityId, CitySight sight)
+        {
+            sight.CityId = cityId;
+            _context.CitySights.Add(sight);
+        }
+
+        public async Task<bool> SaveChangesAsync()
+        {
+            return await _context.SaveChangesAsync() > 0;
+        }
+
+        public void DeleteSight(CitySight sight)
+        {
+            _context.CitySights.Remove(sight);
         }
     }
 }

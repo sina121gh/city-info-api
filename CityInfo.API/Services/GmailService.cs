@@ -14,7 +14,7 @@ namespace CityInfo.API.Services
             _mailTo = configuration["MailSettings:MailToAddress"];
         }
 
-        public void Send(string to, string subject, string htmlString)
+        public async Task Send(string to, string subject, string htmlString)
         {
             try
             {
@@ -31,7 +31,7 @@ namespace CityInfo.API.Services
                 smtp.UseDefaultCredentials = false;
                 smtp.Credentials = new NetworkCredential(_mailFrom, "qojo yxrd zmwy yzzq");
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtp.Send(message);
+                await smtp.SendMailAsync(message);
             }
             catch (Exception) { }
         }

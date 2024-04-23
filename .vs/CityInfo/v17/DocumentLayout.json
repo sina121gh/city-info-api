@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "E:\\Documents\\VS\\Toplean\\WebApi\\CityInfo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2BCE371D-952B-49D1-956D-BCAC9DCDBC0A}|CityInfo.API\\CityInfo.API.csproj|e:\\documents\\vs\\toplean\\webapi\\cityinfo\\cityinfo.api\\dbcontexts\\cityinfodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2BCE371D-952B-49D1-956D-BCAC9DCDBC0A}|CityInfo.API\\CityInfo.API.csproj|solutionrelative:cityinfo.api\\dbcontexts\\cityinfodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BCE371D-952B-49D1-956D-BCAC9DCDBC0A}|CityInfo.API\\CityInfo.API.csproj|e:\\documents\\vs\\toplean\\webapi\\cityinfo\\cityinfo.api\\entities\\citysight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2BCE371D-952B-49D1-956D-BCAC9DCDBC0A}|CityInfo.API\\CityInfo.API.csproj|solutionrelative:cityinfo.api\\entities\\citysight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BCE371D-952B-49D1-956D-BCAC9DCDBC0A}|CityInfo.API\\CityInfo.API.csproj|e:\\documents\\vs\\toplean\\webapi\\cityinfo\\cityinfo.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2BCE371D-952B-49D1-956D-BCAC9DCDBC0A}|CityInfo.API\\CityInfo.API.csproj|solutionrelative:cityinfo.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2BCE371D-952B-49D1-956D-BCAC9DCDBC0A}|CityInfo.API\\CityInfo.API.csproj|e:\\documents\\vs\\toplean\\webapi\\cityinfo\\cityinfo.api\\controllers\\citiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BCE371D-952B-49D1-956D-BCAC9DCDBC0A}|CityInfo.API\\CityInfo.API.csproj|solutionrelative:cityinfo.api\\controllers\\citiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,40 +35,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CityInfoDbContext.cs",
-              "DocumentMoniker": "E:\\Documents\\VS\\Toplean\\WebApi\\CityInfo\\CityInfo.API\\DbContexts\\CityInfoDbContext.cs",
-              "RelativeDocumentMoniker": "CityInfo.API\\DbContexts\\CityInfoDbContext.cs",
-              "ToolTip": "E:\\Documents\\VS\\Toplean\\WebApi\\CityInfo\\CityInfo.API\\DbContexts\\CityInfoDbContext.cs",
-              "RelativeToolTip": "CityInfo.API\\DbContexts\\CityInfoDbContext.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAywE0AAAAAAAAA",
+              "Title": "CitiesController.cs",
+              "DocumentMoniker": "E:\\Documents\\VS\\Toplean\\WebApi\\CityInfo\\CityInfo.API\\Controllers\\CitiesController.cs",
+              "RelativeDocumentMoniker": "CityInfo.API\\Controllers\\CitiesController.cs",
+              "ToolTip": "E:\\Documents\\VS\\Toplean\\WebApi\\CityInfo\\CityInfo.API\\Controllers\\CitiesController.cs",
+              "RelativeToolTip": "CityInfo.API\\Controllers\\CitiesController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T16:32:47.882Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CitySight.cs",
-              "DocumentMoniker": "E:\\Documents\\VS\\Toplean\\WebApi\\CityInfo\\CityInfo.API\\Entities\\CitySight.cs",
-              "RelativeDocumentMoniker": "CityInfo.API\\Entities\\CitySight.cs",
-              "ToolTip": "E:\\Documents\\VS\\Toplean\\WebApi\\CityInfo\\CityInfo.API\\Entities\\CitySight.cs",
-              "RelativeToolTip": "CityInfo.API\\Entities\\CitySight.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAA1wBQAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T16:26:04.846Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\Documents\\VS\\Toplean\\WebApi\\CityInfo\\CityInfo.API\\Program.cs",
-              "RelativeDocumentMoniker": "CityInfo.API\\Program.cs",
-              "ToolTip": "E:\\Documents\\VS\\Toplean\\WebApi\\CityInfo\\CityInfo.API\\Program.cs",
-              "RelativeToolTip": "CityInfo.API\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T16:12:09.042Z",
+              "WhenOpened": "2024-04-23T16:35:34.276Z",
               "EditorCaption": ""
             }
           ]

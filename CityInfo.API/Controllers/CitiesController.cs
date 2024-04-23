@@ -1,4 +1,6 @@
-﻿using CityInfo.API.Models.DTOs;
+﻿using AutoMapper;
+using CityInfo.API.Entities;
+using CityInfo.API.Models.DTOs;
 using CityInfo.API.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,32 +13,38 @@ namespace CityInfo.API.Controllers
         #region DI
 
         private readonly ICityInfoRepository _cityInfoRepository;
+        private readonly IMapper _mapper;
 
-        public CitiesController(ICityInfoRepository cityInfoRepository)
+        public CitiesController(ICityInfoRepository cityInfoRepository, IMapper mapper)
         {
             _cityInfoRepository = cityInfoRepository ??
                 throw new ArgumentNullException(nameof(cityInfoRepository));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         #endregion
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CityDto>>> GetCities()
+        public async Task<ActionResult<IEnumerable<CityWithoutSightsDto>>> GetCities()
         {
             var cities = await _cityInfoRepository.GetCitiesAsync();
-            return Ok(cities);
+
+            return Ok(_mapper.Map<IEnumerable<CityWithoutSightsDto>>(cities));
         }
 
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<CityDto>> GetCity(int id)
+        public async Task<IActionResult> GetCity(int id, bool includeSights = false)
         {
-            var city = await _cityInfoRepository.GetCityByIdAsync(id, true);
+            City? city = await _cityInfoRepository.GetCityByIdAsync(id, includeSights);
 
             if (city == null)
                 return NotFound();
 
-            return Ok(city);
+            if (includeSights)
+                return Ok(_mapper.Map<CityDto>(city));
+            else
+                return Ok(_mapper.Map<CityWithoutSightsDto>(city));
         }
     }
 }
