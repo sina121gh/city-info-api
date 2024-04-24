@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QVhqXTsOV0WmVg6LNbdezlGZGHVhk4o44dCGvgSzFqTxFPE/4m6ayt22Sa267kq22LpYx69RzsaznRWLyeOTxg==",
+  "dgSpecHash": "pAWz18mWQFFX3O5hFkHih0MxwGBqQEEwv9zLHBGML7dkx0ReIGpsTfoSrp72q/bzyjPXs/C//4JKsr9VQdNJAA==",
   "success": true,
   "projectFilePath": "E:\\Documents\\VS\\Toplean\\WebApi\\CityInfo\\CityInfo.API\\CityInfo.API.csproj",
   "expectedPackageFiles": [
@@ -41,7 +41,7 @@
     "C:\\Users\\sina1\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
     "C:\\Users\\sina1\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "C:\\Users\\sina1\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.5.1\\microsoft.identitymodel.abstractions.7.5.1.nupkg.sha512",
-    "C:\\Users\\sina1\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.1.2\\microsoft.identitymodel.jsonwebtokens.7.1.2.nupkg.sha512",
+    "C:\\Users\\sina1\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.5.1\\microsoft.identitymodel.jsonwebtokens.7.5.1.nupkg.sha512",
     "C:\\Users\\sina1\\.nuget\\packages\\microsoft.identitymodel.logging\\7.5.1\\microsoft.identitymodel.logging.7.5.1.nupkg.sha512",
     "C:\\Users\\sina1\\.nuget\\packages\\microsoft.identitymodel.protocols\\7.1.2\\microsoft.identitymodel.protocols.7.1.2.nupkg.sha512",
     "C:\\Users\\sina1\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\7.1.2\\microsoft.identitymodel.protocols.openidconnect.7.1.2.nupkg.sha512",
@@ -76,7 +76,7 @@
     "C:\\Users\\sina1\\.nuget\\packages\\system.composition.runtime\\6.0.0\\system.composition.runtime.6.0.0.nupkg.sha512",
     "C:\\Users\\sina1\\.nuget\\packages\\system.composition.typedparts\\6.0.0\\system.composition.typedparts.6.0.0.nupkg.sha512",
     "C:\\Users\\sina1\\.nuget\\packages\\system.diagnostics.diagnosticsource\\8.0.0\\system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512",
-    "C:\\Users\\sina1\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.1.2\\system.identitymodel.tokens.jwt.7.1.2.nupkg.sha512",
+    "C:\\Users\\sina1\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.5.1\\system.identitymodel.tokens.jwt.7.5.1.nupkg.sha512",
     "C:\\Users\\sina1\\.nuget\\packages\\system.io.pipelines\\6.0.3\\system.io.pipelines.6.0.3.nupkg.sha512",
     "C:\\Users\\sina1\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\sina1\\.nuget\\packages\\system.reflection.metadata\\6.0.1\\system.reflection.metadata.6.0.1.nupkg.sha512",

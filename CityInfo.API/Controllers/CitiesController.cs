@@ -2,11 +2,13 @@
 using CityInfo.API.Entities;
 using CityInfo.API.Models.DTOs;
 using CityInfo.API.Repositories.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CityInfo.API.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("api/cities")]
     public class CitiesController : ControllerBase
     {
