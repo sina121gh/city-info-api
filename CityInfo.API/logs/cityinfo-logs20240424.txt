@@ -1,0 +1,285 @@
+2024-04-24 20:00:08.331 +03:30 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-04-24 20:00:08.911 +03:30 [DBG] Entity Framework Core 8.0.4 initialized 'CityInfoDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:8.0.4' with options: None
+2024-04-24 20:00:09.842 +03:30 [DBG] 'CityInfoDbContext' disposed.
+2024-04-24 20:00:16.162 +03:30 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-04-24 20:00:16.456 +03:30 [DBG] Entity Framework Core 8.0.4 initialized 'CityInfoDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:8.0.4' with options: None
+2024-04-24 20:00:16.706 +03:30 [DBG] Creating DbConnection.
+2024-04-24 20:00:16.715 +03:30 [DBG] Created DbConnection. (9ms).
+2024-04-24 20:00:16.717 +03:30 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:00:16.776 +03:30 [DBG] Opened connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:00:16.781 +03:30 [DBG] Disposing connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:00:16.784 +03:30 [DBG] Disposed connection to database 'main' on server 'CityInfo.db' (0ms).
+2024-04-24 20:00:16.787 +03:30 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2024-04-24 20:00:16.787 +03:30 [DBG] Creating DbConnection.
+2024-04-24 20:00:16.787 +03:30 [DBG] Created DbConnection. (0ms).
+2024-04-24 20:00:16.790 +03:30 [DBG] Created DbCommand for 'ExecuteScalar' (2ms).
+2024-04-24 20:00:16.790 +03:30 [DBG] Initialized DbCommand for 'ExecuteScalar' (4ms).
+2024-04-24 20:00:16.790 +03:30 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:00:16.791 +03:30 [DBG] Opened connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:00:16.796 +03:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-04-24 20:00:16.814 +03:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-04-24 20:00:16.815 +03:30 [DBG] Closing connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:00:16.816 +03:30 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (1ms).
+2024-04-24 20:00:16.822 +03:30 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:00:16.822 +03:30 [DBG] Opened connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:00:16.822 +03:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2024-04-24 20:00:16.822 +03:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2024-04-24 20:00:16.822 +03:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2024-04-24 20:00:16.823 +03:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-04-24 20:00:16.823 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-04-24 20:00:16.825 +03:30 [DBG] Closing data reader to 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:00:16.826 +03:30 [DBG] A data reader for 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db' is being disposed after spending 1ms reading results.
+2024-04-24 20:00:16.826 +03:30 [DBG] Closing connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:00:16.826 +03:30 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (0ms).
+2024-04-24 20:00:16.851 +03:30 [DBG] 'CityInfoDbContext' disposed.
+2024-04-24 20:00:16.851 +03:30 [DBG] Disposing connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:00:16.851 +03:30 [DBG] Disposed connection to database 'main' on server 'CityInfo.db' (0ms).
+2024-04-24 20:01:00.728 +03:30 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-04-24 20:01:01.024 +03:30 [DBG] Entity Framework Core 8.0.4 initialized 'CityInfoDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:8.0.4' with options: None
+2024-04-24 20:01:01.332 +03:30 [DBG] 'CityInfoDbContext' disposed.
+2024-04-24 20:01:11.397 +03:30 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-04-24 20:01:11.745 +03:30 [DBG] Entity Framework Core 8.0.4 initialized 'CityInfoDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:8.0.4' with options: None
+2024-04-24 20:01:11.754 +03:30 [DBG] Creating DbConnection.
+2024-04-24 20:01:11.759 +03:30 [DBG] Created DbConnection. (3ms).
+2024-04-24 20:01:11.761 +03:30 [DBG] Migrating using database 'main' on server 'CityInfo.db'.
+2024-04-24 20:01:11.762 +03:30 [DBG] Creating DbConnection.
+2024-04-24 20:01:11.763 +03:30 [DBG] Created DbConnection. (1ms).
+2024-04-24 20:01:11.764 +03:30 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:01:11.770 +03:30 [DBG] Opened connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:01:11.773 +03:30 [DBG] Disposing connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:01:11.776 +03:30 [DBG] Disposed connection to database 'main' on server 'CityInfo.db' (0ms).
+2024-04-24 20:01:11.781 +03:30 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2024-04-24 20:01:11.785 +03:30 [DBG] Created DbCommand for 'ExecuteScalar' (3ms).
+2024-04-24 20:01:11.786 +03:30 [DBG] Initialized DbCommand for 'ExecuteScalar' (6ms).
+2024-04-24 20:01:11.786 +03:30 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:01:11.787 +03:30 [DBG] Opened connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:01:11.791 +03:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-04-24 20:01:11.801 +03:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-04-24 20:01:11.802 +03:30 [DBG] Closing connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:01:11.803 +03:30 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (1ms).
+2024-04-24 20:01:11.803 +03:30 [DBG] Creating DbConnection.
+2024-04-24 20:01:11.804 +03:30 [DBG] Created DbConnection. (0ms).
+2024-04-24 20:01:11.804 +03:30 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:01:11.804 +03:30 [DBG] Opened connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:01:11.804 +03:30 [DBG] Disposing connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:01:11.804 +03:30 [DBG] Disposed connection to database 'main' on server 'CityInfo.db' (0ms).
+2024-04-24 20:01:11.804 +03:30 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2024-04-24 20:01:11.804 +03:30 [DBG] Created DbCommand for 'ExecuteScalar' (0ms).
+2024-04-24 20:01:11.804 +03:30 [DBG] Initialized DbCommand for 'ExecuteScalar' (0ms).
+2024-04-24 20:01:11.804 +03:30 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:01:11.804 +03:30 [DBG] Opened connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:01:11.804 +03:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-04-24 20:01:11.804 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-04-24 20:01:11.805 +03:30 [DBG] Closing connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:01:11.805 +03:30 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (0ms).
+2024-04-24 20:01:11.812 +03:30 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:01:11.812 +03:30 [DBG] Opened connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:01:11.812 +03:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2024-04-24 20:01:11.812 +03:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2024-04-24 20:01:11.812 +03:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2024-04-24 20:01:11.812 +03:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-04-24 20:01:11.813 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-04-24 20:01:11.814 +03:30 [DBG] Closing data reader to 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:01:11.815 +03:30 [DBG] A data reader for 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db' is being disposed after spending 1ms reading results.
+2024-04-24 20:01:11.815 +03:30 [DBG] Closing connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:01:11.815 +03:30 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (0ms).
+2024-04-24 20:01:11.822 +03:30 [INF] Applying migration '20240424163101_added_user_model'.
+2024-04-24 20:01:11.975 +03:30 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:01:11.976 +03:30 [DBG] Opened connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:01:11.977 +03:30 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2024-04-24 20:01:11.980 +03:30 [DBG] Began transaction with isolation level 'Serializable'.
+2024-04-24 20:01:11.981 +03:30 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2024-04-24 20:01:11.981 +03:30 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2024-04-24 20:01:11.981 +03:30 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2024-04-24 20:01:11.981 +03:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Users" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Users" PRIMARY KEY AUTOINCREMENT,
+    "UserName" TEXT NOT NULL,
+    "FirstName" TEXT NOT NULL,
+    "LastName" TEXT NOT NULL,
+    "CityId" INTEGER NOT NULL,
+    CONSTRAINT "FK_Users_Cities_CityId" FOREIGN KEY ("CityId") REFERENCES "Cities" ("Id") ON DELETE CASCADE
+);
+2024-04-24 20:01:11.984 +03:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Users" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Users" PRIMARY KEY AUTOINCREMENT,
+    "UserName" TEXT NOT NULL,
+    "FirstName" TEXT NOT NULL,
+    "LastName" TEXT NOT NULL,
+    "CityId" INTEGER NOT NULL,
+    CONSTRAINT "FK_Users_Cities_CityId" FOREIGN KEY ("CityId") REFERENCES "Cities" ("Id") ON DELETE CASCADE
+);
+2024-04-24 20:01:11.984 +03:30 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2024-04-24 20:01:11.984 +03:30 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2024-04-24 20:01:11.984 +03:30 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2024-04-24 20:01:11.984 +03:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Users_CityId" ON "Users" ("CityId");
+2024-04-24 20:01:11.984 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Users_CityId" ON "Users" ("CityId");
+2024-04-24 20:01:11.985 +03:30 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2024-04-24 20:01:11.985 +03:30 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2024-04-24 20:01:11.985 +03:30 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2024-04-24 20:01:11.985 +03:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20240424163101_added_user_model', '8.0.4');
+2024-04-24 20:01:11.985 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20240424163101_added_user_model', '8.0.4');
+2024-04-24 20:01:11.986 +03:30 [DBG] Committing transaction.
+2024-04-24 20:01:12.149 +03:30 [DBG] Committed transaction.
+2024-04-24 20:01:12.150 +03:30 [DBG] Disposing transaction.
+2024-04-24 20:01:12.150 +03:30 [DBG] Closing connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:01:12.151 +03:30 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (0ms).
+2024-04-24 20:01:12.151 +03:30 [DBG] 'CityInfoDbContext' disposed.
+2024-04-24 20:01:12.152 +03:30 [DBG] Disposing connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:01:12.152 +03:30 [DBG] Disposed connection to database 'main' on server 'CityInfo.db' (0ms).
+2024-04-24 20:05:25.280 +03:30 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-04-24 20:05:25.591 +03:30 [DBG] Entity Framework Core 8.0.4 initialized 'CityInfoDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:8.0.4' with options: None
+2024-04-24 20:05:25.911 +03:30 [DBG] 'CityInfoDbContext' disposed.
+2024-04-24 20:05:33.341 +03:30 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-04-24 20:05:33.659 +03:30 [DBG] Entity Framework Core 8.0.4 initialized 'CityInfoDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:8.0.4' with options: None
+2024-04-24 20:05:33.925 +03:30 [DBG] Creating DbConnection.
+2024-04-24 20:05:33.932 +03:30 [DBG] Created DbConnection. (5ms).
+2024-04-24 20:05:33.935 +03:30 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:05:33.940 +03:30 [DBG] Opened connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:05:33.943 +03:30 [DBG] Disposing connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:05:33.945 +03:30 [DBG] Disposed connection to database 'main' on server 'CityInfo.db' (0ms).
+2024-04-24 20:05:33.949 +03:30 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2024-04-24 20:05:33.949 +03:30 [DBG] Creating DbConnection.
+2024-04-24 20:05:33.949 +03:30 [DBG] Created DbConnection. (0ms).
+2024-04-24 20:05:33.952 +03:30 [DBG] Created DbCommand for 'ExecuteScalar' (2ms).
+2024-04-24 20:05:33.952 +03:30 [DBG] Initialized DbCommand for 'ExecuteScalar' (4ms).
+2024-04-24 20:05:33.952 +03:30 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:05:33.953 +03:30 [DBG] Opened connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:05:33.957 +03:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-04-24 20:05:33.965 +03:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-04-24 20:05:33.967 +03:30 [DBG] Closing connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:05:33.968 +03:30 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (1ms).
+2024-04-24 20:05:33.975 +03:30 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:05:33.975 +03:30 [DBG] Opened connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:05:33.976 +03:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2024-04-24 20:05:33.976 +03:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2024-04-24 20:05:33.976 +03:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2024-04-24 20:05:33.976 +03:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-04-24 20:05:33.976 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-04-24 20:05:33.978 +03:30 [DBG] Closing data reader to 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:05:33.978 +03:30 [DBG] A data reader for 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db' is being disposed after spending 1ms reading results.
+2024-04-24 20:05:33.978 +03:30 [DBG] Closing connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:05:33.978 +03:30 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (0ms).
+2024-04-24 20:05:34.006 +03:30 [DBG] 'CityInfoDbContext' disposed.
+2024-04-24 20:05:34.006 +03:30 [DBG] Disposing connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:05:34.006 +03:30 [DBG] Disposed connection to database 'main' on server 'CityInfo.db' (0ms).
+2024-04-24 20:05:52.422 +03:30 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-04-24 20:05:52.732 +03:30 [DBG] Entity Framework Core 8.0.4 initialized 'CityInfoDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:8.0.4' with options: None
+2024-04-24 20:05:53.025 +03:30 [DBG] 'CityInfoDbContext' disposed.
+2024-04-24 20:05:59.509 +03:30 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-04-24 20:05:59.799 +03:30 [DBG] Entity Framework Core 8.0.4 initialized 'CityInfoDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:8.0.4' with options: None
+2024-04-24 20:05:59.807 +03:30 [DBG] Creating DbConnection.
+2024-04-24 20:05:59.813 +03:30 [DBG] Created DbConnection. (3ms).
+2024-04-24 20:05:59.816 +03:30 [DBG] Migrating using database 'main' on server 'CityInfo.db'.
+2024-04-24 20:05:59.818 +03:30 [DBG] Creating DbConnection.
+2024-04-24 20:05:59.819 +03:30 [DBG] Created DbConnection. (1ms).
+2024-04-24 20:05:59.820 +03:30 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:05:59.824 +03:30 [DBG] Opened connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:05:59.826 +03:30 [DBG] Disposing connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:05:59.829 +03:30 [DBG] Disposed connection to database 'main' on server 'CityInfo.db' (0ms).
+2024-04-24 20:05:59.832 +03:30 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2024-04-24 20:05:59.835 +03:30 [DBG] Created DbCommand for 'ExecuteScalar' (2ms).
+2024-04-24 20:05:59.835 +03:30 [DBG] Initialized DbCommand for 'ExecuteScalar' (4ms).
+2024-04-24 20:05:59.835 +03:30 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:05:59.836 +03:30 [DBG] Opened connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:05:59.839 +03:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-04-24 20:05:59.849 +03:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-04-24 20:05:59.850 +03:30 [DBG] Closing connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:05:59.850 +03:30 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (0ms).
+2024-04-24 20:05:59.851 +03:30 [DBG] Creating DbConnection.
+2024-04-24 20:05:59.851 +03:30 [DBG] Created DbConnection. (0ms).
+2024-04-24 20:05:59.851 +03:30 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:05:59.851 +03:30 [DBG] Opened connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:05:59.851 +03:30 [DBG] Disposing connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:05:59.851 +03:30 [DBG] Disposed connection to database 'main' on server 'CityInfo.db' (0ms).
+2024-04-24 20:05:59.851 +03:30 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2024-04-24 20:05:59.851 +03:30 [DBG] Created DbCommand for 'ExecuteScalar' (0ms).
+2024-04-24 20:05:59.851 +03:30 [DBG] Initialized DbCommand for 'ExecuteScalar' (0ms).
+2024-04-24 20:05:59.851 +03:30 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:05:59.851 +03:30 [DBG] Opened connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:05:59.851 +03:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-04-24 20:05:59.852 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-04-24 20:05:59.852 +03:30 [DBG] Closing connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:05:59.852 +03:30 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (0ms).
+2024-04-24 20:05:59.861 +03:30 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:05:59.861 +03:30 [DBG] Opened connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:05:59.861 +03:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2024-04-24 20:05:59.861 +03:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2024-04-24 20:05:59.861 +03:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2024-04-24 20:05:59.862 +03:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-04-24 20:05:59.862 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-04-24 20:05:59.864 +03:30 [DBG] Closing data reader to 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:05:59.865 +03:30 [DBG] A data reader for 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db' is being disposed after spending 1ms reading results.
+2024-04-24 20:05:59.865 +03:30 [DBG] Closing connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:05:59.865 +03:30 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (0ms).
+2024-04-24 20:05:59.870 +03:30 [INF] Applying migration '20240424163552_Added_Password_For_User'.
+2024-04-24 20:05:59.885 +03:30 [DBG] Opening connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:05:59.886 +03:30 [DBG] Opened connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:06:00.047 +03:30 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2024-04-24 20:06:00.049 +03:30 [DBG] Began transaction with isolation level 'Serializable'.
+2024-04-24 20:06:00.049 +03:30 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2024-04-24 20:06:00.049 +03:30 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2024-04-24 20:06:00.049 +03:30 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2024-04-24 20:06:00.049 +03:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "Users" ADD "Password" TEXT NOT NULL DEFAULT '';
+2024-04-24 20:06:00.068 +03:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "Users" ADD "Password" TEXT NOT NULL DEFAULT '';
+2024-04-24 20:06:00.068 +03:30 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2024-04-24 20:06:00.068 +03:30 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2024-04-24 20:06:00.068 +03:30 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2024-04-24 20:06:00.068 +03:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20240424163552_Added_Password_For_User', '8.0.4');
+2024-04-24 20:06:00.068 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20240424163552_Added_Password_For_User', '8.0.4');
+2024-04-24 20:06:00.069 +03:30 [DBG] Committing transaction.
+2024-04-24 20:06:00.357 +03:30 [DBG] Committed transaction.
+2024-04-24 20:06:00.358 +03:30 [DBG] Disposing transaction.
+2024-04-24 20:06:00.358 +03:30 [DBG] Closing connection to database 'main' on server 'E:\Documents\VS\Toplean\WebApi\CityInfo\CityInfo.API\CityInfo.db'.
+2024-04-24 20:06:00.359 +03:30 [DBG] Closed connection to database 'main' on server 'CityInfo.db' (0ms).
+2024-04-24 20:06:00.361 +03:30 [DBG] 'CityInfoDbContext' disposed.
+2024-04-24 20:06:00.362 +03:30 [DBG] Disposing connection to database 'main' on server 'CityInfo.db'.
+2024-04-24 20:06:00.362 +03:30 [DBG] Disposed connection to database 'main' on server 'CityInfo.db' (0ms).

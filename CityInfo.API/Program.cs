@@ -6,7 +6,9 @@ using CityInfo.API.Services;
 using CityInfo.API.Services.Interfaces;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Serilog;
+using System.Text;
 
 #region Serilog Config
 
@@ -51,6 +53,27 @@ builder.Services.AddSingleton<FileExtensionContentTypeProvider>();
 builder.Services.AddScoped<IMailService, GmailService>();
 builder.Services.AddSingleton<CitiesDataStore>();
 builder.Services.AddScoped<ICityInfoRepository, CityInfoRepository>();
+builder.Services.AddScoped<IUserRepository,  UserRepository>();
+
+#endregion
+
+#region JWT Authentication Config
+
+builder.Services.AddAuthentication("Bearer")
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new()
+        {
+            ValidateIssuer = true,
+            ValidateIssuerSigningKey = true,
+            ValidateAudience = true,
+            ValidIssuer = builder.Configuration["Authentication:Issuer"],
+            ValidAudience = builder.Configuration["Authentication:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.ASCII.GetBytes(builder.Configuration["Authentication:SecretForKey"])
+                ),
+        };
+    });
 
 #endregion
 
@@ -65,6 +88,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapDefaultControllerRoute();

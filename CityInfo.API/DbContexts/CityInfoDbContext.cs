@@ -15,7 +15,7 @@ namespace CityInfo.API.DbContexts
 
         public DbSet<City> Cities { get; set; }
         public DbSet<CitySight> CitySights { get; set; }
-
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

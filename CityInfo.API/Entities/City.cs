@@ -26,6 +26,9 @@ namespace CityInfo.API.Entities
         public ICollection<CitySight> Sights { get; set; }
         = new List<CitySight>();
 
+        public ICollection<User> Users { get; set; }
+        = new List<User>();
+
         #endregion
     }
 }
