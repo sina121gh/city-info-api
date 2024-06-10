@@ -1,5 +1,0 @@
-From Body,  From Form
-
-From Query = ali.com/show?name=ali&family=alian
-
-From Route : ali.com/api/cities/1/tehran/iran
